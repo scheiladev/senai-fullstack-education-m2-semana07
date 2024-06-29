@@ -7,7 +7,7 @@ import { DisciplinasComponent } from './disciplinas/disciplinas.component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginComponent,
   },
   {
@@ -25,5 +25,10 @@ export const routes: Routes = [
   {
     path: 'disciplinas',
     component: DisciplinasComponent,
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
   },
 ];
