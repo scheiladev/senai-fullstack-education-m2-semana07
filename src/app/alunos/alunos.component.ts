@@ -1,11 +1,31 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-alunos',
   standalone: true,
-  imports: [RouterModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './alunos.component.html',
   styleUrl: './alunos.component.scss',
 })
-export class AlunosComponent {}
+export class AlunosComponent implements OnInit {
+  formPesquisa!: FormGroup;
+
+  ngOnInit(): void {
+    this.formPesquisa = new FormGroup({
+      pesquisar: new FormControl('', Validators.required),
+    });
+  }
+
+  pesquisar() {}
+
+  excluir() {
+    window.confirm('Quer mesmo excluir este usuário?');
+  }
+}
