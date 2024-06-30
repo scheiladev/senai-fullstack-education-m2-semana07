@@ -6,11 +6,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { HeaderComponent } from '../shared/components/header/header.component';
 
 @Component({
   selector: 'app-alunos',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, HeaderComponent],
   templateUrl: './alunos.component.html',
   styleUrl: './alunos.component.scss',
 })
